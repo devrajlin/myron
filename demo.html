@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Roadmap — Hybrid Professional</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{ --lime:#8fff07; --dark:#0f1720; --muted:#6b7280; }
+    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:#f6f7f9;padding:44px;color:#0b0b0b;}
+    .wrap{max-width:1200px;margin:0 auto;}
+    .header { display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:22px; }
+    .title { font-size:28px; font-weight:800; }
+    .subtitle { color:var(--muted); }
+
+    .tabs {
+      display:flex; gap:10px; margin-bottom:18px; flex-wrap:wrap;
+    }
+    .tab-btn {
+      padding:.6rem 1rem; border-radius:999px; border:1px solid rgba(11,11,11,0.06); background:white; font-weight:700;
+    }
+    .tab-btn.active { background:linear-gradient(90deg, #fffce2,var(--lime)); color:#071000; box-shadow:0 10px 30px rgba(143,255,7,0.08); transform:translateY(-3px); }
+
+    .content {
+      background: linear-gradient(180deg,#ffffff,#fffdfa); border-radius:14px; padding:20px; box-shadow:0 10px 30px rgba(20,24,40,0.06);
+    }
+    .week-grid { display:grid; grid-template-columns: 1fr 2fr; gap:16px; align-items:start; }
+    .week-left { background:#fbfaf7; padding:16px; border-radius:12px; border:1px solid rgba(11,11,11,0.04); }
+    .week-right { padding:8px 0; }
+
+    .step { display:flex; gap:12px; align-items:flex-start; margin-bottom:12px; }
+    .dot { width:14px;height:14px;border-radius:4px;background:var(--lime); box-shadow:0 6px 18px rgba(143,255,7,0.12); margin-top:6px; }
+    .step h6 { margin:0; font-weight:700; }
+    .step p { margin:0;color:var(--muted); }
+
+    .action-row { display:flex; gap:10px; margin-top:12px; }
+    .btn-lime { background:linear-gradient(90deg,var(--lime), #c2ff00); color:#071000; border:none; font-weight:800; padding:.6rem 1rem; border-radius:999px; }
+    .btn-ghost { border:1px solid rgba(0,0,0,0.06); background:white; padding:.6rem 1rem; border-radius:999px; }
+
+    @media (max-width:980px){ .week-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="header">
+      <div>
+        <div class="title">Class 10 <span style="color:var(--lime)">Maths Roadmap</span></div>
+        <div class="subtitle small">Pick a week to explore topics, outcomes and mock tests.</div>
+      </div>
+      <div>
+        <small class="text-muted">6-week program • Weekly mock tests</small>
+      </div>
+    </div>
+
+    <div class="tabs" role="tablist" aria-label="Roadmap weeks">
+      <button class="tab-btn active" data-week="0">Induction</button>
+      <button class="tab-btn" data-week="1">Week 1</button>
+      <button class="tab-btn" data-week="2">Week 2</button>
+      <button class="tab-btn" data-week="3">Week 3</button>
+      <button class="tab-btn" data-week="4">Week 4</button>
+      <button class="tab-btn" data-week="5">Week 5</button>
+      <button class="tab-btn" data-week="6">Week 6</button>
+    </div>
+
+    <div class="content" id="content">
+      <!-- dynamic content populated by JS -->
+      <div class="week-grid">
+        <div class="week-left">
+          <div class="step">
+            <div class="dot"></div>
+            <div>
+              <h6 id="left-title">Induction Assessment</h6>
+              <p id="left-desc">Short test to place students into Basic, Moderate or Advanced batches based on score thresholds.</p>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="dot"></div>
+            <div>
+              <h6>Outcomes</h6>
+              <p class="small">Personalized roadmap, batch assignment & recommended study hours per week.</p>
+            </div>
+          </div>
+
+          <div class="action-row">
+            <button class="btn-lime">Book Assessment</button>
+            <button class="btn-ghost">Download Syllabus</button>
+          </div>
+        </div>
+
+        <div class="week-right" id="week-right">
+          <h5 class="fw-bold mb-3" id="right-week">Topics covered</h5>
+          <ul id="topic-list">
+            <!-- topics injected here -->
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const weeks = [
+      { title:'Induction Assessment', desc:'Classify students into Basic (<30%), Moderate (<50%), Advanced (>65%).', topics:['Basic (marks <30%)','Moderate (marks <50%)','Advanced (marks >65%)','Placement & personalised plan'] },
+      { title:'Week 1 — Number Systems & Algebra', desc:'Core numeracy — rational/irrational, factorization, polynomials.', topics:['Rational & Irrational Numbers','Prime & Composite Numbers','HCF & LCM','Algebraic expressions & identities','Polynomials'] },
+      { title:'Week 2 — Geometry Foundations', desc:'Lines, angles, triangles, circle properties & coordinate plotting.', topics:['Basic Geometrical Ideas','Lines and Angles','Triangles & Congruence','Circle Properties','Cartesian Plane'] },
+      { title:'Week 3 — Advanced Algebra', desc:'Factorization, quadratic equations and polynomials in-depth.', topics:['Quadratic Equations','Polynomials — Remainder & Factor Theorems','Identities & Factorization','Practice problems & test'] },
+      { title:'Week 4 — Trigonometry & Mensuration', desc:'Trigonometric ratios, heights & distances, area problems.', topics:['Trigonometric Ratios','Heights & Distances','Mensuration — Area & Volume','Application problems'] },
+      { title:'Week 5 — Revision & Integration', desc:'Integration of concepts with cumulative practice & mini-tests.', topics:['Mixed problem sets','Time-management strategies','Trick questions & shortcuts','Mock test rehearsal'] },
+      { title:'Week 6 — Final Mock & Feedback', desc:'Full-length mock, paper analysis & final improvement plan.', topics:['Full Mock Test','Error analysis','Personal action plan','Parent-teacher feedback'] }
+    ];
+
+    // init
+    function renderWeek(i){
+      const w = weeks[i];
+      document.getElementById('left-title').textContent = w.title;
+      document.getElementById('left-desc').textContent = w.desc;
+      document.getElementById('right-week').textContent = 'Topics covered — ' + w.title;
+      const ul = document.getElementById('topic-list');
+      ul.innerHTML = '';
+      w.topics.forEach(t=>{
+        const li = document.createElement('li');
+        li.className = 'mb-2';
+        li.innerHTML = '<strong class="me-2">•</strong>' + t;
+        ul.appendChild(li);
+      });
+    }
+
+    document.querySelectorAll('.tab-btn').forEach(btn=>{
+      btn.addEventListener('click', (e)=>{
+        document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+        btn.classList.add('active');
+        renderWeek(Number(btn.dataset.week));
+      });
+    });
+
+    // initial render
+    renderWeek(0);
+  </script>
+</body>
+</html>

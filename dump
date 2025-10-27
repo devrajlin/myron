@@ -1,0 +1,76 @@
+<!-- timeline -->
+ <!-- Math Skills Improvement Timeline Section -->
+<section class="py-5" style="background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);">
+  <div class="container">
+
+    <!-- Section Heading -->
+    <div class="text-center mb-5">
+      <h2 class="fw-bold display-6 text-dark">Fundamental Math Skills Improvement</h2>
+      <p class="text-muted fs-5">Progressive mastery through concept clarity and practical problem-solving</p>
+    </div>
+    <!-- row 1 -->
+    <div class="row">
+      <div class="col-md-6 text-center">
+        <!-- Timeline -->
+            <div class="timeline position-relative ">
+
+                <!-- Item 1 -->
+                <div class="timeline-item mb-5">
+                  <div class="timeline-icon bg-success text-white">
+                    <i class="bi bi-lightbulb"></i>
+                  </div>
+                  <div class="timeline-content">
+                    <h5 class="fw-bold text-success">Solid Math Foundation</h5>
+                    <p class="text-secondary mb-0">Core understanding of math principles and logical reasoning.</p>
+                  </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="timeline-item mb-5">
+                  <div class="timeline-icon bg-info text-white">
+                    <i class="bi bi-graph-up"></i>
+                  </div>
+                  <div class="timeline-content">
+                    <h5 class="fw-bold text-info">Linear Equations</h5>
+                    <p class="text-secondary mb-0">Building tools for solving and visualizing linear equations.</p>
+                  </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="timeline-item mb-5">
+                  <div class="timeline-icon bg-primary text-white">
+                    <i class="bi bi-slash-circle"></i>
+                  </div>
+                  <div class="timeline-content">
+                    <h5 class="fw-bold text-primary">Fractions and LCM</h5>
+                    <p class="text-secondary mb-0">Fluency in fraction operations and least common multiple.</p>
+                  </div>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="timeline-item">
+                  <div class="timeline-icon bg-dark text-white">
+                    <i class="bi bi-calculator"></i>
+                  </div>
+                  <div class="timeline-content">
+                    <h5 class="fw-bold text-dark">Decimal-Fraction Conversion</h5>
+                    <p class="text-secondary mb-0">Understanding conversion between decimals and fractions.</p>
+                  </div>
+                </div>
+          </div>
+      </div>
+      <!-- image -->
+      <div class="col-md-6 text-center">
+          <div class="card text-white border-0 shadow-lg p-3" style="
+                background: linear-gradient(135deg, #00C6FF 0%, #0072FF 100%);
+                border-radius: 1rem;
+              ">
+          <div class="card-body">
+            <img src="images/about_us_1.webp" class="img-fluid">
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end row 1 -->
+  </div>
+</section>
